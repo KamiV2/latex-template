@@ -38,6 +38,7 @@
 \usepackage[noabbrev,nameinlink]{cleveref}
 \usepackage{enumitem}
 \usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
 \usepackage{mathrsfs} 
 \usepackage{bbm}
 \usepackage[backend=biber,bibencoding=ascii,style=alphabetic,sorting=none]{biblatex}
@@ -73,6 +74,7 @@
 \newcommand{\category}[1]{\mathsf{\underline{#1}}}
 \newcommand{\acts}{\circlearrowleft}
 \newcommand{\tleq}{\unlhd}
+\renewcommand{\algorithmiccomment}[1]{\hfill\textcolor{blue}{$\triangleright$ {#1}}}
 
 % Boolean logic/algorithms
 \newcommand{\cor}{\textsc{ or }}
@@ -144,6 +146,21 @@
 \newenvironment{algbox}[1]{
         \vskip2ex
             \begin{mdframed}[backgroundcolor=yellow!10, topline=false,rightline=false,leftline=false,bottomline=false, userdefinedwidth=.7\linewidth, align=center]
+              \vspace{1ex}
+              \hrulefill
+              \vspace{-1.5ex}
+  
+              {\bf #1}
+  
+              \vspace{-2.5ex}
+              \hrulefill
+              }{
+            \end{mdframed}
+}
+
+\newenvironment{algboxw}[2]{
+        \vskip2ex
+            \begin{mdframed}[backgroundcolor=yellow!10, topline=false,rightline=false,leftline=false,bottomline=false, userdefinedwidth=#2\linewidth, align=center]
               \vspace{1ex}
               \hrulefill
               \vspace{-1.5ex}
