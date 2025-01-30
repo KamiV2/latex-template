@@ -1,0 +1,261 @@
+
+\usepackage{anyfontsize} 
+\usepackage[margin=0.75in]{geometry} 
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath, amsthm, mathtools, stmaryrd, bbm, soul}
+\usepackage[bitstream-charter, cal=cmcal]{mathdesign}
+\usepackage[T1]{fontenc}
+\usepackage{diagbox, multirow, multicol, array} % Table stuff
+\usepackage{listings}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{csquotes}
+\usepackage{url}
+\usepackage{boxedminipage}
+\usepackage{wrapfig}
+\usepackage{color, xcolor}
+\usepackage{transparent}
+\usepackage{parskip}
+\usepackage{varwidth}
+\usepackage{bm}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{wrapfig}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=violet,pdfstartview=FitH]{hyperref}
+\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage{enumitem}
+\usepackage{tikz, forest, tikz-qtree, tikz}
+\usetikzlibrary{shapes.geometric, arrows, trees}
+\usepackage{forest}
+\usepackage{tikz-qtree}
+\usepackage{tikz-cd}
+% Bib import
+\usepackage[backend=biber,bibencoding=utf8,style=alphabetic,sorting=none]{biblatex}
+% Conditional logic
+\usepackage{ifthen}
+
+% config
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\seprule}{\noindent\rule{\textwidth}{1pt}}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+
+% code formatting
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.5,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\bfseries\color{red},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Algebra
+\newcommand{\unit}[1]{#1^{\times}}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\rank}{rk}
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\ang}{ang}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Ob}{Ob}
+\newcommand{\category}[1]{\mathsf{\underline{#1}}}
+\newcommand{\acts}{\circlearrowleft}
+\newcommand{\tleq}{\unlhd}
+\DeclareMathOperator{\cmod}{mod}
+\newcommand{\lnorm}[2]{\left\|#1\right\|{#2}}
+
+% Boolean logic
+\newcommand{\cor}{\textsc{ or }}
+\newcommand{\cand}{\textsc{ and }}
+\newcommand{\xor}{\oplus}
+\newcommand{\true}{\textsc{True}}
+\newcommand{\false}{\textsc{False}}
+\newcommand{\nil}{\textsc{Nil}}
+\newcommand{\alg}[1]{\textsc{#1}}
+\newcommand{\eq}{\leftarrow}
+
+\newcommand{\chapterref}[2]{[\S #1, #2]}
+\renewcommand{\algorithmiccomment}[1]{\hfill\textcolor{blue}{$\triangleright$ {#1}}}
+
+% math formatting
+\def\bar{\overline}
+\newcommand{\script}[1]{\mathcal{#1}}
+\newcommand{\fancyscript}[1]{\mathscr{#1}}
+
+
+% number sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+
+%Paired Delims
+\def\set#1{\left\{ #1 \right\}}
+\def\angle#1{\left\langle #1 \right\rangle}
+\def\sqbrackets#1{\left[ #1 \right]}
+\def\brackets#1{\left( #1 \right)}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+
+%problem environment
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}
+\vspace{1em}
+}
+
+%problems list environment
+\newlist{subprob}{enumerate}{1}
+\setlist[subprob]{label={\bfseries\itshape\alph*.}}
+
+%solution environment with some cool styling
+\newcommand{\incompletebox}{%
+  \tcbox[on line, left=2pt,right=2pt,top=2pt,bottom=2pt,colback=red!20, colframe=white]{\textbf{\color{red}Incomplete}}
+}
+
+\newif\ifcomplete
+\completetrue
+
+\newenvironment{solution}[1][Solution]{
+    \setcounter{nlem}{0}
+    \vspace{-2ex}
+    \begin{proof}[#1]
+    \ifcomplete\else\incompletebox\fi
+}{
+    \completetrue
+    \phantom\qedhere\end{proof}
+}
+
+% colored boxes
+\newenvironment{answerbox}{
+      \begin{mdframed}[backgroundcolor=green!30, innertopmargin=12px, topline=false,rightline=false,leftline=false,bottomline=false]}{
+  \end{mdframed}%
+}
+
+\newenvironment{thmbox}{
+        \vskip2ex
+          \begin{mdframed}[backgroundcolor=blue!10, topline=false,rightline=false,leftline=false,bottomline=false]}{
+  \end{mdframed}
+}
+
+% theorems (numbered and unnumbered
+\theoremstyle{definition}
+\newtheorem*{lem}{Lemma}
+\newtheorem*{claim}{Claim}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{coro}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{example}{Example}
+\newtheorem*{probstatement}{Problem}
+\newtheorem{nlem}{Lemma}
+\newtheorem{ndefn}[nlem]{Definition}
+\newtheorem{nthm}[nlem]{Theorem}
+\newtheorem{ncor}[nlem]{Corollary}
+\newtheorem{nprop}[nlem]{Proposition}
+\newtheorem{nrmk}[nlem]{Remark}
+
+
+% Probability/info theory
+\newcommand{\Prob}[1]{\mathbb{P}\left[#1\right]}
+\newcommand{\Exp}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\Var}[1]{\mathbf{Var}\left[#1\right]}
+\newcommand{\Cov}[1]{\mathbf{Cov}[#1]}
+\renewcommand{\Pr}{\Prob}
+\DeclareMathOperator{\Bin}{Bin}
+\DeclareMathOperator{\Pois}{Pois}
+\DeclareMathOperator{\Geom}{Geom}
+\DeclareMathOperator{\Unif}{Unif}
+\DeclareMathOperator{\Bern}{Bern}
+\DeclareMathOperator{\Normal}{\mathcal{N}}
+\DeclareMathOperator{\dkl}{D_{KL}}
+\DeclareMathOperator{\bin}{bin}
+
+
+% Misc commands
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\poly}{\mathrm{poly}}
+\newcommand{\polylog}{\mathrm{polylog}}
+\newcommand{\contradiction}{\hfill$\Rightarrow\!\Leftarrow$}
+\newcommand{\writer}{Karun Ram}
+\newcommand{\email}{karun.ram.25@dartmouth.edu}
+\newcommand{\TODO}[1]{\textcolor{red}{\bf [TODO: #1] }}
+\newcommand{\note}[1]{\textcolor{blue}{\bf [Note: #1] }}
+\newcommand{\alert}[1]{\textcolor{red}{\bf [#1]}}
+\renewcommand{\epsilon}{\varepsilon}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+% PSet Titles
+
+\newcommand{\normaltitle}[3]{
+    \begin{center}
+        {\LARGE #2}
+        \vskip-1ex
+        {\large \writer}
+        \vskip-1ex
+        {\large Date: \today}
+        \vskip-1ex
+        {\large Course: #1, ~#3}
+        \vskip0.1ex
+        \vspace{2ex}
+        \hrule height 2pt
+        \vspace{2ex}
+    \end{center}
+}
+
+\newcommand{\fancytitle}[3]{
+{
+  \large
+    \rule{\textwidth}{1pt}
+    \begin{center}
+        \setlength{\parskip}{0mm} 
+        \setlength{\parindent}{0mm}
+        \makebox[\textwidth][s]{\textbf{#2} \hfill \writer}
+        \makebox[\textwidth][s]{#1:~#3 \hfill Date: \today}
+    \end{center}
+    \vspace{-2ex}
+    \rule{\textwidth}{1pt}
+}
+ }
